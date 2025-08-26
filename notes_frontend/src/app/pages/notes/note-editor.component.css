@@ -1,0 +1,17 @@
+.editor {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.form {
+  display: grid;
+  gap: 10px;
+}
+.error {
+  color: #b91c1c;
+}

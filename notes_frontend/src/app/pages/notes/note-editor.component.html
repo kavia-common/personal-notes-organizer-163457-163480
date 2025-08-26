@@ -1,0 +1,11 @@
+<div class="editor">
+  <div class="toolbar">
+    <button (click)="save()">{{ saving() ? 'Saving...' : (id ? 'Save changes' : 'Create note') }}</button>
+  </div>
+
+  <div class="form">
+    <input type="text" placeholder="Title" [(ngModel)]="titleModel"/>
+    <textarea rows="16" placeholder="Start typing..." [(ngModel)]="contentModel"></textarea>
+    <p class="error" *ngIf="error()">{{ error() }}</p>
+  </div>
+</div>
