@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
+/**
+ * PUBLIC_INTERFACE
+ * Root component hosting the router outlet for the application.
+ */
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'notes_frontend is being generated';
+  title = 'Personal Notes Organizer';
 }

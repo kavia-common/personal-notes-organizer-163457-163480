@@ -1,0 +1,32 @@
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">🗒️</div>
+      <div class="name">Notes</div>
+    </div>
+
+    <div class="sidebar-actions">
+      <button class="new" (click)="newNote()">+ New note</button>
+      <input type="text" [(ngModel)]="queryModel" (ngModelChange)="onSearchChange()" placeholder="Search notes..." />
+    </div>
+
+    <nav class="note-list">
+      <a *ngFor="let n of notes()" [routerLink]="['/note', n.id]" routerLinkActive="active" [title]="n.title">
+        <div class="note-item">
+          <div class="title">{{ n.title || 'Untitled' }}</div>
+          <div class="date" *ngIf="n.updatedAt">{{ n.updatedAt | date:'short' }}</div>
+        </div>
+      </a>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <div class="sidebar-footer">
+      <button class="ghost" (click)="logout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

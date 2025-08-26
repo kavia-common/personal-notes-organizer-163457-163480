@@ -1,0 +1,27 @@
+.viewer {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+article h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.date {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+pre {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-family: inherit;
+}
+.error {
+  color: #b91c1c;
+}

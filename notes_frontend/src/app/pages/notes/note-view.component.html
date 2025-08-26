@@ -1,0 +1,19 @@
+<div class="viewer" *ngIf="note() as n; else loadingOrError">
+  <div class="toolbar">
+    <button class="secondary" (click)="edit()">Edit</button>
+    <button class="ghost" (click)="delete()">{{ deleting() ? 'Deleting...' : 'Delete' }}</button>
+  </div>
+
+  <article>
+    <h1>{{ n.title || 'Untitled' }}</h1>
+    <p class="date" *ngIf="n.updatedAt">Updated {{ n.updatedAt | date:'short' }}</p>
+    <pre>{{ n.content }}</pre>
+  </article>
+</div>
+
+<ng-template #loadingOrError>
+  <p class="error" *ngIf="error(); else loading">{{ error() }}</p>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+</ng-template>
